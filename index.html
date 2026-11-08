@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikkah of Najeeb &amp; Tayyibah</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Amiri&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d4af5f;--gold2:#f3dc9b;--navy:#0b1a2e;--navy2:#16315a;--ivory:#f4ecd8;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(ellipse at 50% 20%,#1d3f70,#0b1a2e 70%,#060e1a);font-family:'Cormorant Garamond',Georgia,serif;color:var(--ivory);overflow:hidden}
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.star{position:absolute;width:var(--z);height:var(--z);border-radius:50%;background:#fff;animation:tw var(--t) ease-in-out infinite;animation-delay:var(--d)}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+.dust{position:absolute;bottom:-10px;width:var(--z);height:var(--z);border-radius:50%;background:var(--gold2);box-shadow:0 0 6px var(--gold);animation:rise var(--t) linear infinite;animation-delay:var(--d);opacity:0}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}100%{transform:translate(var(--x),-105vh);opacity:0}}
+.lan{position:absolute;top:0;width:44px;transform-origin:50% 0;animation:sway var(--t) ease-in-out infinite alternate}
+.lan svg{display:block;width:100%;overflow:visible}
+@keyframes sway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.flame{animation:fl 1.4s ease-in-out infinite alternate}
+@keyframes fl{from{opacity:.55}to{opacity:1}}
+.scene{position:fixed;inset:0;display:grid;place-items:center;z-index:2}
+.scene>*{grid-area:1/1}
+.gate{position:relative;width:min(84vw,380px);aspect-ratio:.7;perspective:1400px;cursor:pointer;transition:opacity 1s,transform 1.2s}
+.glow{position:absolute;inset:0;border-radius:100% 100% 4px 4px/38% 38% 4px 4px;background:radial-gradient(circle at 50% 50%,#fff3c4,#f0c96a 40%,#b8862f 80%);opacity:.25;transition:opacity 1.5s}
+.door{position:absolute;top:0;width:50%;height:100%;background:repeating-linear-gradient(45deg,transparent 0 13px,rgba(212,175,95,.22) 13px 14px),repeating-linear-gradient(-45deg,transparent 0 13px,rgba(212,175,95,.22) 13px 14px),linear-gradient(160deg,#1f4478,#0f2443);border:2px solid var(--gold);box-shadow:inset 0 0 0 8px #0f2443,inset 0 0 0 9px var(--gold);transition:transform 1.9s cubic-bezier(.6,0,.2,1);backface-visibility:hidden}
+.door.a{left:0;transform-origin:0 50%;border-radius:100% 0 0 4px/38% 0 0 4px}
+.door.b{right:0;transform-origin:100% 50%;border-radius:0 100% 4px 0/0 38% 4px 0}
+.opening .door.a{transform:rotateY(-112deg)}
+.opening .door.b{transform:rotateY(112deg)}
+.opening .glow{opacity:1}
+.seal{position:absolute;left:50%;top:52%;width:78px;height:78px;margin:-39px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),var(--gold) 55%,#8a6a22);box-shadow:0 0 22px rgba(243,220,155,.7);z-index:3;display:grid;place-items:center;animation:beat 1.8s ease-in-out infinite;transition:transform .7s,opacity .7s}
+.seal svg{width:52%}
+@keyframes beat{50%{transform:scale(1.1);box-shadow:0 0 34px rgba(243,220,155,1)}}
+.opening .seal{animation:none;transform:scale(2.2);opacity:0}
+.hint{position:absolute;bottom:-46px;width:100%;text-align:center;font-family:Cinzel,serif;font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold2);animation:pl 2s ease-in-out infinite;transition:opacity .4s}
+.opening .hint{opacity:0}
+@keyframes pl{50%{opacity:.3}}
+.gone .gate{opacity:0;transform:scale(1.25);pointer-events:none}
+.card{--w:min(90vw,430px,calc(92dvh*.58));width:var(--w);aspect-ratio:.58;font-size:calc(var(--w)/24);border-radius:50% 50% 6px 6px/22% 22% 6px 6px;background:radial-gradient(ellipse at 50% 0,#1f4478,#0e2140 75%);position:relative;opacity:0;transform:scale(.8) translateY(30px);transition:opacity 1.4s,transform 1.6s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 0 60px rgba(212,175,95,.35)}
+.card::before,.card::after{content:"";position:absolute;border-radius:inherit;pointer-events:none}
+.card::before{inset:0;border:2px solid var(--gold)}
+.card::after{inset:2.2%;border:1px solid rgba(212,175,95,.7);background:linear-gradient(110deg,transparent 40%,rgba(255,240,190,.16) 50%,transparent 60%) -200% 0/200% 100% no-repeat;animation:sh 5s ease-in-out infinite}
+@keyframes sh{to{background-position:200% 0}}
+.reveal .card{opacity:1;transform:none;pointer-events:auto}
+.inner{position:absolute;left:9%;right:9%;top:11%;bottom:5%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.inner>*{opacity:0;transform:translateY(12px);transition:opacity .9s,transform .9s}
+.reveal .inner>*{opacity:1;transform:none}
+.orn{width:2.6em;animation:spin 24s linear infinite;margin-bottom:.4em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bis{font-family:Amiri,serif;font-size:1.3em;color:var(--gold2)}
+.sp{font-family:Cinzel,serif;font-size:.62em;letter-spacing:.38em;text-transform:uppercase;margin:.5em 0 .2em;color:var(--gold)}
+.nm{font-family:Cinzel,serif;font-size:1.8em;line-height:1.1;letter-spacing:.08em;background:linear-gradient(90deg,#c79a3b,#fff0b8,#c79a3b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3em;color:var(--gold)}
+.ln{width:45%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.8em 0}
+.sm{font-style:italic;font-size:.92em;opacity:.9;margin-bottom:.5em}
+.row{margin:.25em 0}.row small{display:block;font-family:Cinzel,serif;font-size:.55em;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.row span{font-size:1.1em;font-weight:600;letter-spacing:.04em}
+.row em{display:block;font-size:.85em;opacity:.9}
+.ayah{font-family:Amiri,serif;font-size:1.45em;color:var(--gold2);line-height:1.3}
+.tr{font-style:italic;font-size:.82em;margin:.1em 0 .6em;opacity:.95}
+.tr small{display:block;font-family:Cinzel,serif;font-style:normal;font-size:.62em;letter-spacing:.25em;color:var(--gold);margin-top:.15em}
+.map{display:inline-block;margin-top:.7em;padding:.45em 1.3em;border:1px solid var(--gold);border-radius:99px;color:var(--gold2);text-decoration:none;font-family:Cinzel,serif;font-size:.62em;letter-spacing:.25em;text-transform:uppercase;transition:background .3s}
+.map:hover{background:rgba(212,175,95,.2)}
+.orn{width:1.7em!important;margin-bottom:.2em!important}
+</style></head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="scene" id="scene">
+	<div class="gate" id="gate" role="button" tabindex="0" aria-label="Open invitation">
+		<div class="glow"></div>
+		<div class="door a"></div><div class="door b"></div>
+		<div class="seal"><svg viewBox="0 0 40 40"><path d="M25 6a14 14 0 1 0 0 28a11 11 0 1 1 0-28z" fill="#5a4313"/><path d="M30 14l1.6 3.4 3.7.4-2.8 2.5.8 3.7-3.3-1.9-3.3 1.9.8-3.7-2.8-2.5 3.7-.4z" fill="#5a4313"/></svg></div>
+		<div class="hint">Tap to open</div>
+	</div>
+	<div class="card">
+		<div class="inner">
+			<svg class="orn" viewBox="0 0 40 40"><g fill="none" stroke="#d4af5f" stroke-width="1.4"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="3" fill="#f3dc9b"/></g></svg>
+			<div class="ayah">وَخَلَقْنَـٰكُمْ أَزْوَٰجًا</div>
+			<div class="tr">“And We created you in pairs.”<br><small>Surah An-Naba 78:8</small></div>
+			<div class="bis">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+			<div class="sp">The Nikkah of</div>
+			<div class="nm">Najeeb</div><div class="amp">&amp;</div><div class="nm">Tayyibah</div>
+			<div class="ln"></div>
+			<div class="sm">With the blessings of Allah and their families, you are warmly invited to witness their nikkah</div>
+			<div class="row"><small>Date</small><span>Saturday, 19 December 2026</span></div>
+			<div class="row"><small>Time</small><span>After Zuhr</span></div>
+			<div class="row"><small>Venue</small><span>Masjid Ashraf</span><em>Francolin Dr, Bakerton, Springs, 1578</em></div>
+			<a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Masjid+Ashraf+Francolin+Dr+Bakerton+Springs+1578" target="_blank" rel="noopener">View on map</a>
+		</div>
+	</div>
+</div>
+<script>
+const sky=document.getElementById('sky'),r=(a,b)=>a+Math.random()*(b-a);
+for(let i=0;i<60;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${r(0,100)}%;top:${r(0,85)}%;--z:${r(1,3)}px;--t:${r(2,5)}s;--d:-${r(0,5)}s`;sky.appendChild(s)}
+for(let i=0;i<26;i++){const s=document.createElement('i');s.className='dust';s.style.cssText=`left:${r(0,100)}%;--z:${r(2,5)}px;--t:${r(9,18)}s;--d:-${r(0,18)}s;--x:${r(-40,40)}px`;sky.appendChild(s)}
+const L=`<svg viewBox="0 0 40 100"><line x1="20" y1="0" x2="20" y2="{h}" stroke="#d4af5f" stroke-width="1.2"/><g transform="translate(0,{h})"><path d="M20 0l6 6H14z" fill="#d4af5f"/><path d="M13 6h14l5 10v26l-5 10H13l-5-10V16z" fill="#b8862f" stroke="#f3dc9b" stroke-width="1"/><ellipse class="flame" cx="20" cy="29" rx="6" ry="11" fill="#fff0b8"/><path d="M14 52l-2 12M20 52v14M26 52l2 12" stroke="#d4af5f" stroke-width="1.2"/></g></svg>`;
+[[5,60,3.2,'4.5s'],[19,25,2.8,'5.5s'],[78,25,3,'5s'],[92,60,3.4,'4.8s']].forEach(([x,h,w,t])=>{const l=document.createElement('div');l.className='lan';l.style.cssText=`left:${x}%;width:${w*14}px;margin-left:-${w*7}px;--t:${t}`;l.innerHTML=L.replace(/{h}/g,h*.4);sky.appendChild(l)});
+const gate=document.getElementById('gate'),scene=document.getElementById('scene');let done=false;
+function go(){if(done)return;done=true;gate.classList.add('opening');setTimeout(()=>scene.classList.add('gone','reveal'),1900)}
+gate.addEventListener('click',go);gate.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')go()});
+</script>
+</body></html>
